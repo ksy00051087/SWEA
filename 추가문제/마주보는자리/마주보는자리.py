@@ -6,17 +6,13 @@ for tc in range(1, T + 1):
     N = int(input())
     arr = list(map(int, input().split()))
     cnt = 1
-    if N % 2 == 1:
-        for j in range(N // 2 - 1):
-            if arr[j] + arr[(N - 1) - j] >= arr[j + 1] + arr[(N - 2) - j]:
+    if len(arr) % 2 == 0:
+        for i in range(N // 2):
+            if arr[i] + arr[N - 1 - i] >= arr[i] + arr[N - 2 - i]:
                 cnt = 0
     else:
-        for i in range(N // 2):
-            if arr[i] + arr[(N - 1) - i] >= arr[i + 1] + arr[(N - 2) - i]:
+        for i in range(N // 2 - 1):
+            if arr[i] + arr[N - 1 - i] >= arr[i] + arr[N - 2 - i]:
                 cnt = 0
 
-
-
-
-
-    print(f'#{tc} {cnt}')
+    print(f"#{tc} {cnt}")

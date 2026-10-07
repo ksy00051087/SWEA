@@ -9,9 +9,12 @@ for tc in range(1, T + 1):
     for r in range(N - M + 1):
         for c in range(N - M + 1):
             fly = 0
+
             for i in range(M):
                 for j in range(M):
-                    fly += arr[r + i][c + j]
-                    if fly > max_fly:
-                        max_fly = fly
+                    if arr[i][j] >= 10:
+                        fly += 1
+            if fly >= M:
+                max_fly += 1
+
     print(f"#{tc} {max_fly}")
